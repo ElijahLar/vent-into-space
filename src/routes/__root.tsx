@@ -108,11 +108,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+// Public, static application metadata only. Never include user-submitted vent text here.
+const APPLICATION_STRUCTURED_DATA = "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://ventinto.space/#website\",\"url\":\"https://ventinto.space/\",\"name\":\"VENT\",\"description\":\"A quiet, private place to let thoughts go. No accounts, no saved vent history.\",\"inLanguage\":\"en\"},{\"@type\":\"WebPage\",\"@id\":\"https://ventinto.space/#webpage\",\"url\":\"https://ventinto.space/\",\"name\":\"Vent — A Private Place to Let Thoughts Go\",\"isPartOf\":{\"@id\":\"https://ventinto.space/#website\"},\"about\":{\"@id\":\"https://ventinto.space/#app\"},\"inLanguage\":\"en\"},{\"@type\":\"WebApplication\",\"@id\":\"https://ventinto.space/#app\",\"name\":\"VENT\",\"url\":\"https://ventinto.space/\",\"description\":\"Write what you want to release, send it into a black hole animation, and let it disappear. No account or saved message history.\",\"applicationCategory\":\"LifestyleApplication\",\"operatingSystem\":\"Any\",\"isAccessibleForFree\":true,\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"creator\":{\"@type\":\"Person\",\"name\":\"Elijah Oliver Larsson\",\"url\":\"https://elijahlarsson.com/\"}}]}";
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: APPLICATION_STRUCTURED_DATA }} />
       </head>
       <body>
         {children}

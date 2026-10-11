@@ -117,6 +117,12 @@ export function VentPage() {
           <p className="mt-3 text-center text-[11px] tracking-wide text-muted-foreground/60">
             Say it. Send it. Gone.
           </p>
+          <a
+            href="/about.html"
+            className="mx-auto mt-2 block w-fit rounded-sm px-2 py-1 text-center text-[11px] tracking-wide text-muted-foreground/75 underline decoration-muted-foreground/30 underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            How Vent works · Privacy
+          </a>
         </div>
       </div>
 

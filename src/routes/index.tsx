@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { VentPage } from "@/components/vent/VentPage";
 
-const title = "Vent — Say it. Send it. Gone.";
+const title = "Vent — A Private Place to Let Thoughts Go";
 const description =
   "A private place to get something out of your head. Type it, send it into the void, and it disappears. Vent never saves or uploads your vent text.";
 
@@ -14,8 +14,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://ventinto.space/" },
       { property: "og:site_name", content: "Vent" },
-      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image", content: "https://ventinto.space/og-image.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       {
@@ -25,12 +26,13 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
-      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:image", content: "https://ventinto.space/og-image.png" },
       {
         name: "twitter:image:alt",
         content: "Vent — a black hole for thoughts you want to let go of.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://ventinto.space/" }],
   }),
   component: VentPage,
 });
