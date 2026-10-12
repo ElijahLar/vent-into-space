@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { VentPage } from "@/components/vent/VentPage";
 
-const title = "Vent — A Private Place to Let Thoughts Go";
+const title = "VENT | Vent Online, Write It, Let It Go";
 const description =
-  "A private place to get something out of your head. Type it, send it into the void, and it disappears. Vent never saves or uploads your vent text.";
+  "Need to vent online? Write what's on your mind, send it into a black hole, and let it go. VENT is free, with no account, saved history, or AI response.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,7 +32,10 @@ export const Route = createFileRoute("/")({
         content: "Vent — a black hole for thoughts you want to let go of.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://ventinto.space/" }],
+    links: [
+      { rel: "canonical", href: "https://ventinto.space/" },
+      { rel: "help", href: "https://ventinto.space/about.html", title: "About VENT and Privacy" },
+    ],
   }),
   component: VentPage,
 });
